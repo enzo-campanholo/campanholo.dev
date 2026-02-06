@@ -1,2 +1,80 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+@theme {
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body: 'Outfit', 'Helvetica Neue', 'Arial', sans-serif;
+  --color-cream: #F8F6F1;
+  --color-ink: #2E2A27;
+  --color-ink-light: #5C5650;
+  --color-ink-muted: #78716C;
+  --color-rule: #C8C0B8;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Grain texture overlay */
+@layer base {
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    pointer-events: none;
+    opacity: 0.3;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+  }
+}
+
+/* Entrance animations */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rule-extend {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animate-rule-extend {
+    animation: rule-extend 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
