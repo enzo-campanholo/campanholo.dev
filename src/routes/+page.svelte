@@ -16,7 +16,7 @@
 		style="animation-delay: 0.7s;"
 	>
 		<a
-			href="https://www.linkedin.com/in/enzocampanholo"
+			href="https://www.linkedin.com/in/enzo-campanholo"
 			target="_blank"
 			rel="noopener noreferrer"
 			class="group flex items-center gap-2.5 text-ink-muted transition-colors duration-300 hover:text-ink"
@@ -30,7 +30,7 @@
 		<span class="text-rule select-none" aria-hidden="true">/</span>
 
 		<a
-			href="https://github.com/enzocampanholo"
+			href="https://github.com/enzo-campanholo"
 			target="_blank"
 			rel="noopener noreferrer"
 			class="group flex items-center gap-2.5 text-ink-muted transition-colors duration-300 hover:text-ink"
