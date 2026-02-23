@@ -1,0 +1,3 @@
+[submodule "content/writings"]
+	path = content/writings
+	url = https://github.com/enzo-campanholo/writings
